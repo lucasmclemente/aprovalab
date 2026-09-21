@@ -1,0 +1,29 @@
+# Dependências
+node_modules/
+
+# Build
+dist/
+build/
+.angular/
+
+# Ambiente / segredos
+.env
+.env.local
+.env.*.local
+
+# Supabase
+supabase/.branches
+supabase/.temp
+
+# Dados brutos baixados (grandes; não versionar)
+data/raw/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Editores / SO
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
