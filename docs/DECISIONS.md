@@ -9,13 +9,15 @@
 - **D-003** **Anti-alucinação:** fatos (notas de corte, gabaritos) vêm do banco; a IA só analisa/
   explica/planeja sobre o contexto dado.
 - **D-004** Tenancy **B2C** (RLS por `user_id`); catálogo é público de leitura.
+- **D-005 — Estratégia de questões: HÍBRIDO começando por geradas + curadas** (2026-09-21).
+  MVP usa itens **originais gerados pela IA e revisados** (matriz do ENEM), sem risco autoral;
+  em paralelo, avaliar juridicamente o uso de **provas oficiais do ENEM** para elevar a
+  fidelidade; licenciar banco de terceiros fica como evolução.
+- **D-006 — Exame inicial: ENEM/SISU** (2026-09-21). Fuvest e outros na Fase 2.
 
 ## Decisões pendentes (precisam de você)
-- **P-001 — Estratégia de questões** (`DATA-STRATEGY §3/§5`): oficiais / geradas por IA /
-  licenciadas / híbrido. **Recomendação:** híbrido começando por **geradas + curadas**.
-  *Bloqueia o desenho da Sprint 3.*
-- **P-002 — Exame inicial:** confirmar **ENEM/SISU** (recomendado) como foco do MVP.
-- **P-003 — Verificação jurídica** do uso de provas oficiais (ENEM) para uso comercial.
+- **P-003 — Verificação jurídica** do uso de provas oficiais (ENEM) para uso comercial
+  (necessária apenas quando formos incluir itens oficiais; não bloqueia o MVP).
 - **P-004 — Nome do produto** (opções no `PRD §12`).
 - **P-005 — Fonte das notas de corte:** coleta automática dos portais vs. carga manual inicial.
 - **P-006 — Modelo de negócio** (freemium?) — não bloqueia o MVP, mas orienta limites de IA.
