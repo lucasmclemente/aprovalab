@@ -1,4 +1,4 @@
-# DATABASE — Aprova (modelo inicial)
+# DATABASE — AprovaLab (modelo inicial)
 
 > Esboço do modelo de dados. Detalhar por sprint. Última atualização: 2026-09-21.
 > Convenções: PK `uuid`; `created_at`/`updated_at`; RLS conforme `ARCHITECTURE.md §3`.

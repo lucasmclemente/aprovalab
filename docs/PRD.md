@@ -1,7 +1,7 @@
-# PRD — Aprova (Copiloto do Vestibular)
+# PRD — AprovaLab (Copiloto do Vestibular)
 
 > Product Requirements Document. Fonte da verdade dos requisitos. Última atualização: 2026-09-21.
-> Nome do produto é **provisório** (ver §12).
+> Nome do produto: **AprovaLab**.
 
 ## 1. Visão
 
@@ -122,7 +122,6 @@ Existem apps de questões (ex.: bancos de questões e simulados) e plataformas d
 diferencial: **meta concreta + diagnóstico + plano de IA que evolui** — menos "banco de
 exercícios", mais "copiloto que te guia até o curso".
 
-## 12. Nome do produto (provisório)
-Sugestões para avaliar (checar disponibilidade de marca/domínio antes de fixar):
-**Norte**, **Rumo**, **Mira**, **Trilha**, **Aprova**, **Cortte** (trocadilho com "nota de
-corte"). Decisão em `DECISIONS.md`.
+## 12. Nome do produto
+**AprovaLab** (definido em 2026-09-21). Verificar registro de marca e domínio antes do
+lançamento comercial.

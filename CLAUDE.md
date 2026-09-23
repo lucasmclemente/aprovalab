@@ -1,9 +1,9 @@
-# CLAUDE.md — Aprova (nome provisório)
+# CLAUDE.md — AprovaLab
 
 > Arquivo de contexto do projeto. Preencher conforme o projeto evolui.
 
 ## Visão geral
-- **Nome:** Aprova _(provisório — alternativas no `docs/PRD.md`)_
+- **Nome:** AprovaLab
 - **Status:** planejamento (criado em 21/09/2026) — produto novo, do zero
 - **Repositório:** local em `C:\Users\lucas\aprova` (a publicar no GitHub)
 - **Pivot:** sucede a experiência do projeto **Agendinha** (agenda escolar), que continua

@@ -1,4 +1,4 @@
-# ARCHITECTURE — Aprova
+# ARCHITECTURE — AprovaLab
 
 > Arquitetura do MVP. Reaproveita a fundação da Agendinha (Supabase + Angular).
 > Última atualização: 2026-09-21.

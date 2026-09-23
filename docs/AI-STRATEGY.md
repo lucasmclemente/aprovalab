@@ -1,4 +1,4 @@
-# AI-STRATEGY — Aprova
+# AI-STRATEGY — AprovaLab
 
 > Como a IA (Claude) é usada, com segurança e custo sob controle. Última atualização: 2026-09-21.
 

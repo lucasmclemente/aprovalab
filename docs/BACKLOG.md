@@ -1,4 +1,4 @@
-# BACKLOG — Aprova
+# BACKLOG — AprovaLab
 
 > Backlog por sprint (proposta). Última atualização: 2026-09-21.
 > Status: ⬜ a fazer · 🟡 em andamento · ✅ feito.

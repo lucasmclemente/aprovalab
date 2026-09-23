@@ -1,4 +1,4 @@
-# Aprova _(nome provisório)_
+# AprovaLab
 
 Copiloto de estudos para o **vestibular** — dados reais de aprovação + IA para dizer ao aluno
 **onde ele está, o que estudar e como evoluir** até o curso dos sonhos.

@@ -1,4 +1,4 @@
-# DECISIONS — Aprova (registro de decisões e riscos)
+# DECISIONS — AprovaLab (registro de decisões e riscos)
 
 > Última atualização: 2026-09-21.
 
@@ -14,11 +14,11 @@
   em paralelo, avaliar juridicamente o uso de **provas oficiais do ENEM** para elevar a
   fidelidade; licenciar banco de terceiros fica como evolução.
 - **D-006 — Exame inicial: ENEM/SISU** (2026-09-21). Fuvest e outros na Fase 2.
+- **D-007 — Nome: AprovaLab** (2026-09-21). Repositório: `github.com/lucasmclemente/aprovalab`.
 
 ## Decisões pendentes (precisam de você)
 - **P-003 — Verificação jurídica** do uso de provas oficiais (ENEM) para uso comercial
   (necessária apenas quando formos incluir itens oficiais; não bloqueia o MVP).
-- **P-004 — Nome do produto** (opções no `PRD §12`).
 - **P-005 — Fonte das notas de corte:** coleta automática dos portais vs. carga manual inicial.
 - **P-006 — Modelo de negócio** (freemium?) — não bloqueia o MVP, mas orienta limites de IA.
 - **P-007 — Redação por IA:** MVP ou Fase 2 (recomendo **Fase 2**).

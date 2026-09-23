@@ -1,4 +1,4 @@
-# DATA-STRATEGY — Aprova
+# DATA-STRATEGY — AprovaLab
 
 > Como obtemos, organizamos e usamos os dados. É a base do produto **e** o maior risco.
 > Última atualização: 2026-09-21. **Vários itens precisam de decisão sua** (ver §5).

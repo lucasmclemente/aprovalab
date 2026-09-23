@@ -1,4 +1,4 @@
-# Documentação — Aprova _(nome provisório)_
+# Documentação — AprovaLab
 
 Ordem sugerida de leitura:
 
