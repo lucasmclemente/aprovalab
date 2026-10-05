@@ -15,11 +15,12 @@
 - ✅ Onboarding do perfil (série, data da prova, rotina) + home com a jornada
 - ✅ Testes de isolamento (4 testes: aluno só vê/edita os próprios dados)
 
-## Sprint 2 — Meta (dados de aprovação)
-- ⬜ Modelo do catálogo: `institutions`, `courses`, `course_offerings`, `cutoffs`, `exam_weights`
-- ⬜ Pipeline de ingestão: carregar cursos + **notas de corte** (SISU) — carga inicial
-- ⬜ Onboarding da meta: buscar curso/instituição → tela da **meta** (nota de corte, pesos,
-  concorrência)
+## Sprint 2 — Meta (dados de aprovação) ✅
+- ✅ Modelo do catálogo: `institutions`, `course_offerings`, `cutoffs`, `exam_weights`, `exam_areas`
+- ✅ Pipeline de ingestão **automática** (SISU 2025): 123 instituições, 6.863 ofertas, 6.850 notas de corte
+- ✅ Tela "Meu curso dos sonhos": buscar curso → **nota de corte real** + salvar como meta
+- ✅ Testes: isolamento das metas por aluno (catálogo público de leitura)
+- ⬜ (futuro) pesos por área · mais modalidades (cotas) · validação vs. MEC oficial
 
 ## Sprint 3 — Banco de questões & Simulado
 - ⬜ Modelo: `exam_areas`, `topics`, `questions`, `question_options`
