@@ -1,0 +1,12 @@
+{
+  "name": "aprovalab-data",
+  "private": true,
+  "type": "module",
+  "description": "Pipeline de ingestão de dados do SISU para o Supabase.",
+  "scripts": {
+    "ingest:sisu": "node ingest-sisu.mjs"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.58.0"
+  }
+}
