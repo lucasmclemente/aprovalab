@@ -1,0 +1,12 @@
+{
+  "name": "aprovalab-tests",
+  "private": true,
+  "type": "module",
+  "description": "Testes de integração (isolamento por usuário) contra o Supabase.",
+  "scripts": {
+    "test": "node run-all.mjs"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.58.0"
+  }
+}

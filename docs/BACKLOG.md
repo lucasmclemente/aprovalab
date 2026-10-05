@@ -4,16 +4,16 @@
 > Status: ⬜ a fazer · 🟡 em andamento · ✅ feito.
 
 ## Sprint 0 — Decisões & preparação
-- ⬜ Decidir **estratégia de questões** (`DATA-STRATEGY §5`) e exame inicial (ENEM/SISU)
+- ✅ Estratégia de questões: híbrido (geradas+curadas) · exame inicial ENEM/SISU
 - ⬜ (Se usar itens oficiais) verificação jurídica do uso do ENEM
-- ⬜ Escolher **nome** do produto; criar projeto **Supabase** novo; publicar repo no GitHub
-- ⬜ Fixar versões da stack
+- ✅ Nome (AprovaLab) · projeto Supabase criado · repo no GitHub
+- ✅ Versões da stack fixadas (Angular 22, Supabase CLI)
 
-## Sprint 1 — Fundação
-- ⬜ Repo (`frontend/`, `supabase/`, `data/`, `docs/`), Angular + Material + PWA
-- ⬜ Supabase: Auth, `profiles`, RLS por usuário; login/cadastro do aluno
-- ⬜ Onboarding do perfil (série, data da prova, rotina)
-- ⬜ Testes de isolamento (aluno só vê os próprios dados)
+## Sprint 1 — Fundação ✅
+- ✅ Repo (`frontend/`, `supabase/`, `docs/`, `tests/`), Angular + Material + PWA
+- ✅ Supabase: Auth, `profiles`, RLS por usuário; cadastro/login do aluno
+- ✅ Onboarding do perfil (série, data da prova, rotina) + home com a jornada
+- ✅ Testes de isolamento (4 testes: aluno só vê/edita os próprios dados)
 
 ## Sprint 2 — Meta (dados de aprovação)
 - ⬜ Modelo do catálogo: `institutions`, `courses`, `course_offerings`, `cutoffs`, `exam_weights`
