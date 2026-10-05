@@ -1,0 +1,71 @@
+@if (loading() || submitting()) {
+  <mat-progress-bar mode="indeterminate" />
+}
+
+@if (result(); as r) {
+  <!-- RESULTADO -->
+  <mat-card appearance="outlined" class="result-card">
+    <div class="score">
+      <div class="score-num">{{ r.score }}%</div>
+      <div class="score-sub">{{ r.correct }} de {{ r.total }} questões corretas</div>
+    </div>
+
+    <h2>Seu desempenho por área</h2>
+    <div class="areas">
+      @for (a of areaResults(); track a.label) {
+        <div class="area-row">
+          <div class="area-head">
+            <span>{{ a.label }}</span>
+            <span class="area-acc status-{{ status(a.acc) }}">{{ a.acc }}%</span>
+          </div>
+          <div class="bar"><div class="bar-fill status-{{ status(a.acc) }}" [style.width.%]="a.acc"></div></div>
+        </div>
+      }
+    </div>
+
+    <div class="result-note">
+      <mat-icon>auto_awesome</mat-icon>
+      <p>Em breve: a partir deste resultado, a IA vai montar seu <strong>plano de estudos personalizado</strong>, focando primeiro nos pontos mais fracos.</p>
+    </div>
+
+    <div class="result-actions">
+      <a mat-stroked-button routerLink="/">Voltar ao início</a>
+      <a mat-flat-button color="primary" routerLink="/simulado">Refazer diagnóstico</a>
+    </div>
+  </mat-card>
+} @else {
+  <!-- QUIZ -->
+  <header class="run-head">
+    <h1>Simulado diagnóstico</h1>
+    <p>Responda todas as questões e finalize para ver seu resultado.</p>
+  </header>
+
+  @for (q of questions(); track q.question_id) {
+    <mat-card appearance="outlined" class="q-card">
+      <div class="q-top">
+        <span class="q-num">{{ q.position }}</span>
+        <span class="q-area">{{ areaLabel(q.area_key) }}@if (q.topic) { · {{ q.topic }} }</span>
+      </div>
+      <p class="q-statement">{{ q.statement }}</p>
+      <mat-radio-group class="opts" [value]="answers()[q.question_id] ?? null"
+        (change)="setAnswer(q.question_id, $event.value)">
+        @for (o of q.options; track o.label) {
+          <mat-radio-button [value]="o.label" class="opt">
+            <strong>{{ o.label }})</strong> {{ o.text }}
+          </mat-radio-button>
+        }
+      </mat-radio-group>
+    </mat-card>
+  }
+
+  @if (questions().length) {
+    <div class="finalize-bar">
+      <span>{{ answeredCount() }}/{{ questions().length }} respondidas</span>
+      <button mat-flat-button color="primary" (click)="finalize()" [disabled]="!allAnswered() || submitting()">
+        Finalizar e ver resultado
+      </button>
+    </div>
+  } @else if (!loading()) {
+    <p class="muted">Simulado não encontrado ou sem questões.</p>
+  }
+}

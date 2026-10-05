@@ -27,6 +27,15 @@ export const routes: Routes = [
         path: 'explorar',
         loadComponent: () => import('./features/meta/explorar').then((m) => m.Explorar),
       },
+      {
+        path: 'simulado',
+        loadComponent: () =>
+          import('./features/simulado/simulado-start').then((m) => m.SimuladoStart),
+      },
+      {
+        path: 'simulado/:id',
+        loadComponent: () => import('./features/simulado/simulado-run').then((m) => m.SimuladoRun),
+      },
     ],
   },
   { path: '**', redirectTo: '' },

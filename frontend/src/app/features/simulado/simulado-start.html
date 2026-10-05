@@ -1,0 +1,25 @@
+@if (starting()) {
+  <mat-progress-bar mode="indeterminate" />
+}
+
+<mat-card appearance="outlined" class="start-card">
+  <div class="hero">
+    <mat-icon>quiz</mat-icon>
+    <h1>Simulado diagnóstico</h1>
+    <p>
+      Um teste rápido com questões das 4 áreas do ENEM (Linguagens, Humanas, Natureza e
+      Matemática). Ao final, você vê seus <strong>pontos fortes e fracos</strong> por área —
+      o ponto de partida do seu plano de estudos.
+    </p>
+  </div>
+
+  <ul class="tips">
+    <li><mat-icon>schedule</mat-icon> Leva poucos minutos</li>
+    <li><mat-icon>insights</mat-icon> Mostra sua acurácia por área</li>
+    <li><mat-icon>refresh</mat-icon> Você pode refazer depois para medir sua evolução</li>
+  </ul>
+
+  <button mat-flat-button color="primary" class="cta" (click)="start()" [disabled]="starting()">
+    <mat-icon>play_arrow</mat-icon> Iniciar diagnóstico
+  </button>
+</mat-card>
