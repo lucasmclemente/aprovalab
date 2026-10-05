@@ -61,6 +61,21 @@ async function upsertInBatches(table, rows, onConflict, size = 500) {
   }
 }
 
+// Lê TODAS as linhas de uma tabela (o PostgREST limita a 1000 por requisição).
+async function selectAll(table, columns, eq) {
+  const out = [];
+  const size = 1000;
+  for (let from = 0; ; from += size) {
+    let q = sb.from(table).select(columns).range(from, from + size - 1);
+    for (const [col, val] of Object.entries(eq ?? {})) q = q.eq(col, val);
+    const { data, error } = await q;
+    if (error) throw new Error(`${table} select: ${error.message}`);
+    out.push(...(data ?? []));
+    if (!data || data.length < size) break;
+  }
+  return out;
+}
+
 async function main() {
   console.log(`Baixando dados do SISU ${YEAR}...`);
   const courses = await fetchCsv('all_courses.csv');
@@ -78,8 +93,8 @@ async function main() {
   const instRows = [...instByName.values()];
   console.log(`Inserindo ${instRows.length} instituições...`);
   await upsertInBatches('institutions', instRows, 'name');
-  const { data: instData } = await sb.from('institutions').select('id, name');
-  const instId = new Map((instData ?? []).map((i) => [i.name, i.id]));
+  const instData = await selectAll('institutions', 'id, name');
+  const instId = new Map(instData.map((i) => [i.name, i.id]));
 
   // 2) Ofertas de curso
   const offeringRows = courses.map((r) => ({
@@ -96,11 +111,8 @@ async function main() {
   })).filter((o) => o.sisu_id);
   console.log(`Inserindo ${offeringRows.length} ofertas de curso...`);
   await upsertInBatches('course_offerings', offeringRows, 'sisu_id,year');
-  const { data: offData } = await sb
-    .from('course_offerings')
-    .select('id, sisu_id')
-    .eq('year', YEAR);
-  const offId = new Map((offData ?? []).map((o) => [o.sisu_id, o.id]));
+  const offData = await selectAll('course_offerings', 'id, sisu_id', { year: YEAR });
+  const offId = new Map(offData.map((o) => [o.sisu_id, o.id]));
 
   // 3) Notas de corte (Ampla concorrência) a partir do grades.csv
   const cutoffRows = [];
