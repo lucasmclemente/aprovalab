@@ -22,11 +22,12 @@
 - ✅ Testes: isolamento das metas por aluno (catálogo público de leitura)
 - ⬜ (futuro) pesos por área · mais modalidades (cotas) · validação vs. MEC oficial
 
-## Sprint 3 — Banco de questões & Simulado
-- ⬜ Modelo: `exam_areas`, `topics`, `questions`, `question_options`
-- ⬜ Popular banco de questões (conforme estratégia escolhida) + curadoria se gerado por IA
-- ⬜ `simulado-build` (montagem ponderada, sem vazar gabarito) e aplicação no app
-- ⬜ `simulado-grade` (correção server-side) + tela de resultado
+## Sprint 3 — Banco de questões & Simulado ✅
+- ✅ Modelo: `questions`, `question_options`, `simulados`, `simulado_questions`, `responses`
+- ✅ Banco inicial de 12 questões **curadas** (4 áreas); expansão por IA depois
+- ✅ `start_diagnostic` / `get_simulado` (sem vazar gabarito) — RPC server-side
+- ✅ `submit_simulado` (correção server-side) + tela de resultado por área
+- ✅ Testes: fluxo completo + gabarito protegido (11/11 na suíte)
 
 ## Sprint 4 — Inteligência (diagnóstico + plano)
 - ⬜ `analyze-performance` (Claude, saída estruturada) → diagnóstico por área/tópico + gap
