@@ -1,0 +1,12 @@
+<svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="AprovaLab">
+  <rect width="512" height="512" rx="120" fill="#4f46e5" />
+  <path
+    d="M150 262 L224 336 L366 180"
+    stroke="#ffffff"
+    stroke-width="52"
+    fill="none"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+  <circle cx="386" cy="150" r="40" fill="#22c55e" />
+</svg>

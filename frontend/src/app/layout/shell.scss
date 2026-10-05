@@ -1,0 +1,28 @@
+.shell-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--mat-sys-primary);
+  color: var(--mat-sys-on-primary);
+  box-shadow: 0 2px 14px rgba(30, 27, 46, 0.16);
+
+  .mat-icon,
+  button {
+    color: var(--mat-sys-on-primary);
+  }
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.menu-user {
+  font-weight: 700;
+  opacity: 0.9;
+}
+
+.shell-content {
+  max-width: 760px;
+  margin: 1.5rem auto 3rem;
+  padding: 0 1rem;
+}

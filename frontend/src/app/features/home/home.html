@@ -1,0 +1,36 @@
+<header class="greeting">
+  <h1>Olá, {{ profile()?.name || 'estudante' }}! 👋</h1>
+  <p>Bem-vindo(a) ao AprovaLab. Sua jornada rumo à aprovação começa aqui.</p>
+</header>
+
+<mat-card appearance="outlined" class="profile-card">
+  <mat-card-content>
+    <div class="row"><mat-icon>school</mat-icon><span>{{ serieLabel() }}</span></div>
+    @if (profile()?.exam_date) {
+      <div class="row"><mat-icon>event</mat-icon><span>Prova em {{ profile()!.exam_date }}</span></div>
+    }
+    @if (profile()?.study_hours_week) {
+      <div class="row"><mat-icon>schedule</mat-icon><span>{{ profile()!.study_hours_week }}h de estudo por semana</span></div>
+    }
+  </mat-card-content>
+</mat-card>
+
+<h2 class="section-title">Sua jornada</h2>
+<div class="steps">
+  <div class="step done">
+    <div class="step-ic"><mat-icon>check_circle</mat-icon></div>
+    <div><strong>Perfil criado</strong><p>Pronto! Já sabemos onde você está.</p></div>
+  </div>
+  <div class="step">
+    <div class="step-ic"><mat-icon>flag</mat-icon></div>
+    <div><strong>Escolher curso e universidade</strong><p>Em breve — veja a nota de corte e sua meta.</p></div>
+  </div>
+  <div class="step">
+    <div class="step-ic"><mat-icon>quiz</mat-icon></div>
+    <div><strong>Simulado diagnóstico</strong><p>Em breve — descubra seus pontos fortes e fracos.</p></div>
+  </div>
+  <div class="step">
+    <div class="step-ic"><mat-icon>auto_awesome</mat-icon></div>
+    <div><strong>Plano de estudos personalizado</strong><p>Em breve — a IA monta e ajusta seu plano.</p></div>
+  </div>
+</div>

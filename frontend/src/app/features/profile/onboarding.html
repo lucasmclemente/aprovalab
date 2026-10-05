@@ -1,0 +1,50 @@
+<div class="ob-page">
+  <div class="ob-card">
+    <div class="ob-head">
+      <app-brand-logo [size]="40" [wordmark]="true" />
+    </div>
+
+    @if (saving()) {
+      <mat-progress-bar mode="indeterminate" />
+    }
+
+    <div class="ob-body">
+      <h1>Vamos personalizar sua jornada</h1>
+      <p class="sub">Essas respostas ajudam a montar seu plano de estudos.</p>
+
+      <form (ngSubmit)="submit()">
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Em que etapa você está?</mat-label>
+          <mat-select [ngModel]="serie()" (ngModelChange)="serie.set($event)" name="serie">
+            <mat-option value="1_em">1º ano do Ensino Médio</mat-option>
+            <mat-option value="2_em">2º ano do Ensino Médio</mat-option>
+            <mat-option value="3_em">3º ano do Ensino Médio</mat-option>
+            <mat-option value="concluido">Já concluí o Ensino Médio</mat-option>
+            <mat-option value="cursinho">Cursinho pré-vestibular</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Data da prova (se já souber)</mat-label>
+          <input matInput type="date" name="examDate"
+            [ngModel]="examDate()" (ngModelChange)="examDate.set($event)" />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Horas de estudo por semana</mat-label>
+          <input matInput type="number" name="hours" min="0" max="80"
+            [ngModel]="hours()" (ngModelChange)="hours.set($event)" placeholder="ex.: 15" />
+        </mat-form-field>
+
+        @if (error()) {
+          <p class="ob-error">{{ error() }}</p>
+        }
+
+        <button mat-flat-button color="primary" type="submit" class="full-width submit"
+          [disabled]="saving()">
+          Começar
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

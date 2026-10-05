@@ -1,0 +1,105 @@
+// ============================================================
+// AprovaLab — tema (Material 3 + marca própria)
+// ============================================================
+@use '@angular/material' as mat;
+
+html {
+  height: 100%;
+  color-scheme: light;
+
+  @include mat.theme(
+    (
+      color: (
+        primary: mat.$violet-palette,
+        tertiary: mat.$green-palette,
+      ),
+      typography: 'Plus Jakarta Sans',
+      density: 0,
+    )
+  );
+
+  // --- Cores da marca nos tokens do Material 3 ---
+  --mat-sys-primary: #4f46e5; // índigo (foco, conhecimento)
+  --mat-sys-on-primary: #ffffff;
+  --mat-sys-primary-container: #e0e0ff;
+  --mat-sys-on-primary-container: #16118c;
+
+  --mat-sys-tertiary: #16a34a; // verde "aprovado"
+  --mat-sys-on-tertiary: #ffffff;
+  --mat-sys-tertiary-container: #c7f3d4;
+  --mat-sys-on-tertiary-container: #02361a;
+
+  --mat-sys-surface: #faf9ff;
+  --mat-sys-background: #faf9ff;
+  --mat-sys-surface-container-low: #fbfbff;
+  --mat-sys-surface-container: #f2f1fb;
+  --mat-sys-surface-container-high: #ecebf7;
+  --mat-sys-on-surface: #1e1b2e;
+  --mat-sys-on-surface-variant: #585675;
+  --mat-sys-outline: #c6c4da;
+  --mat-sys-outline-variant: #e5e3f2;
+
+  // --- Tokens próprios ---
+  --brand-indigo: #4f46e5;
+  --brand-indigo-deep: #4338ca;
+  --brand-green: #16a34a;
+  --brand-amber: #f59e0b; // XP / gamificação
+  --brand-ink: #1e1b2e;
+  --brand-muted: #585675;
+  --radius-card: 20px;
+  --radius-pill: 999px;
+}
+
+body {
+  margin: 0;
+  height: 100%;
+  background: var(--mat-sys-surface);
+  color: var(--brand-ink);
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.mat-icon {
+  font-family: 'Material Icons Round', 'Material Icons', sans-serif;
+}
+
+h1,
+h2,
+h3,
+.mat-mdc-card-title {
+  font-weight: 800;
+  letter-spacing: -0.015em;
+}
+
+.mat-mdc-card {
+  border-radius: var(--radius-card) !important;
+  border: 1px solid var(--mat-sys-outline-variant);
+  box-shadow: 0 6px 20px rgba(30, 27, 46, 0.06) !important;
+}
+
+.mat-mdc-button-base {
+  border-radius: var(--radius-pill) !important;
+  letter-spacing: 0;
+  font-weight: 700;
+}
+
+.mat-mdc-unelevated-button:not(:disabled) {
+  color: var(--mat-sys-on-primary) !important;
+  .mat-icon,
+  .mdc-button__label {
+    color: var(--mat-sys-on-primary);
+  }
+}
+
+.mat-mdc-form-field {
+  --mdc-outlined-text-field-container-shape: 14px;
+}
+
+.brand-gradient {
+  background: linear-gradient(135deg, #6366f1 0%, #4f46e5 50%, #4338ca 100%);
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--mat-sys-outline) transparent;
+}

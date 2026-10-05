@@ -1,0 +1,52 @@
+<div class="auth-page">
+  <div class="auth-card">
+    <div class="hero brand-gradient">
+      <app-brand-logo [size]="56" />
+      <h1>AprovaLab</h1>
+      <p>Crie sua conta e comece a mirar no seu curso.</p>
+    </div>
+
+    @if (loading()) {
+      <mat-progress-bar mode="indeterminate" />
+    }
+
+    <form class="form" (ngSubmit)="submit()">
+      <h2>Criar conta</h2>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Seu nome</mat-label>
+        <input matInput name="name" autocomplete="name"
+          [ngModel]="name()" (ngModelChange)="name.set($event)" required />
+        <mat-icon matSuffix>person</mat-icon>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>E-mail</mat-label>
+        <input matInput type="email" name="email" autocomplete="email"
+          [ngModel]="email()" (ngModelChange)="email.set($event)" required />
+        <mat-icon matSuffix>mail</mat-icon>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Senha (mín. 6 caracteres)</mat-label>
+        <input matInput type="password" name="password" autocomplete="new-password"
+          [ngModel]="password()" (ngModelChange)="password.set($event)" required />
+        <mat-icon matSuffix>lock</mat-icon>
+      </mat-form-field>
+
+      @if (error()) {
+        <p class="auth-error">{{ error() }}</p>
+      }
+      @if (info()) {
+        <p class="auth-info">{{ info() }}</p>
+      }
+
+      <button mat-flat-button color="primary" type="submit" class="full-width submit"
+        [disabled]="loading() || !name() || !email() || !password()">
+        Criar conta
+      </button>
+
+      <p class="switch">Já tem conta? <a routerLink="/login">Entrar</a></p>
+    </form>
+  </div>
+</div>
