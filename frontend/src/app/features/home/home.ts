@@ -1,5 +1,5 @@
 import { Component, OnInit, inject } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { AuthService } from '../../core/auth/auth.service';
@@ -14,7 +14,7 @@ const SERIE_LABELS: Record<string, string> = {
 
 @Component({
   selector: 'app-home',
-  imports: [MatCardModule, MatIconModule],
+  imports: [RouterLink, MatCardModule, MatIconModule],
   templateUrl: './home.html',
   styleUrl: './home.scss',
 })

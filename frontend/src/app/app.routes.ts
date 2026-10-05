@@ -21,7 +21,13 @@ export const routes: Routes = [
     path: '',
     canActivate: [authGuard],
     loadComponent: () => import('./layout/shell').then((m) => m.Shell),
-    children: [{ path: '', loadComponent: () => import('./features/home/home').then((m) => m.Home) }],
+    children: [
+      { path: '', loadComponent: () => import('./features/home/home').then((m) => m.Home) },
+      {
+        path: 'explorar',
+        loadComponent: () => import('./features/meta/explorar').then((m) => m.Explorar),
+      },
+    ],
   },
   { path: '**', redirectTo: '' },
 ];

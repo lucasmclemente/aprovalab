@@ -71,4 +71,23 @@
     background: var(--mat-sys-tertiary-container);
     color: var(--brand-green);
   }
+
+  .step-ic.active {
+    background: var(--mat-sys-primary-container);
+    color: var(--brand-indigo);
+  }
+}
+
+.step-link {
+  text-decoration: none;
+  color: inherit;
+  transition:
+    transform 0.12s ease,
+    box-shadow 0.12s ease;
+
+  &:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 20px rgba(30, 27, 46, 0.08);
+    border-color: var(--brand-indigo);
+  }
 }

@@ -1,0 +1,80 @@
+<header class="head">
+  <h1>Meu curso dos sonhos 🎯</h1>
+  <p>Escolha os cursos e universidades que você quer conquistar. Mostramos a nota de corte real do SISU 2025.</p>
+</header>
+
+@if (loading()) {
+  <mat-progress-bar mode="indeterminate" />
+}
+
+<!-- METAS SALVAS -->
+<section class="block">
+  <h2>Minhas metas</h2>
+  @if (targets().length) {
+    <div class="cards">
+      @for (t of targets(); track t.targetId) {
+        <mat-card appearance="outlined" class="offer">
+          <div class="offer-main">
+            <div class="offer-title">{{ t.course_name }}</div>
+            <div class="offer-sub">{{ subtitle(t) }}</div>
+          </div>
+          <div class="offer-right">
+            <div class="cut"><span>{{ cutoffLabel(t.cutoff) }}</span><small>nota de corte</small></div>
+            <button mat-icon-button (click)="remove(t)" [disabled]="working()" title="Remover meta">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </div>
+        </mat-card>
+      }
+    </div>
+  } @else if (!loading()) {
+    <div class="empty">
+      <mat-icon>flag</mat-icon>
+      <p>Você ainda não escolheu nenhuma meta. Busque um curso abaixo e adicione.</p>
+    </div>
+  }
+</section>
+
+<!-- BUSCA -->
+<section class="block">
+  <h2>Buscar curso</h2>
+  <form class="search" (ngSubmit)="doSearch()">
+    <mat-form-field appearance="outline" class="grow">
+      <mat-label>Nome do curso (ex.: Medicina, Direito, Engenharia)</mat-label>
+      <input matInput [ngModel]="query()" (ngModelChange)="query.set($event)" name="q" />
+      <mat-icon matSuffix>search</mat-icon>
+    </mat-form-field>
+    <button mat-flat-button color="primary" type="submit" [disabled]="searching() || query().trim().length < 2">
+      Buscar
+    </button>
+  </form>
+
+  @if (searching()) {
+    <mat-progress-bar mode="indeterminate" />
+  }
+
+  @if (!searching() && searched() && !results().length) {
+    <p class="muted">Nenhum curso encontrado para "{{ query() }}".</p>
+  }
+
+  <div class="cards">
+    @for (o of results(); track o.id) {
+      <mat-card appearance="outlined" class="offer">
+        <div class="offer-main">
+          <div class="offer-title">{{ o.course_name }}</div>
+          <div class="offer-sub">{{ subtitle(o) }} @if (o.degree) { · {{ o.degree }} }</div>
+        </div>
+        <div class="offer-right">
+          <div class="cut"><span>{{ cutoffLabel(o.cutoff) }}</span><small>nota de corte</small></div>
+          @if (isTargeted(o.id)) {
+            <span class="added"><mat-icon>check</mat-icon></span>
+          } @else {
+            <button mat-stroked-button (click)="add(o)" [disabled]="working()">
+              <mat-icon>add</mat-icon> Meta
+            </button>
+          }
+        </div>
+      </mat-card>
+    }
+  </div>
+</section>
