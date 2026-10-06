@@ -1,6 +1,22 @@
 <mat-toolbar class="shell-toolbar">
-  <app-brand-logo [size]="28" [wordmark]="true" />
+  <a routerLink="/" class="brand" aria-label="Início">
+    <app-brand-logo [size]="28" [wordmark]="true" />
+  </a>
+
+  <nav class="nav">
+    <a mat-button routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+      <mat-icon>home</mat-icon><span class="lbl">Início</span>
+    </a>
+    <a mat-button routerLink="/explorar" routerLinkActive="active">
+      <mat-icon>flag</mat-icon><span class="lbl">Meu curso</span>
+    </a>
+    <a mat-button routerLink="/simulado" routerLinkActive="active">
+      <mat-icon>quiz</mat-icon><span class="lbl">Simulado</span>
+    </a>
+  </nav>
+
   <span class="spacer"></span>
+
   <button mat-icon-button [matMenuTriggerFor]="userMenu" aria-label="Menu">
     <mat-icon>account_circle</mat-icon>
   </button>
